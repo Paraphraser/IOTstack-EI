@@ -60,7 +60,6 @@ Temporary experimental repo for bringing Edge-Impulse into IOTstack.
 	* **OR** append the service definition to your compose file by hand:
 	
 		```
-		$ cd ~/IOTstack
 		$ sed -e "s/^/  /" .templates/edge-impulse/service.yml >>docker-compose.yml
 		```
 
