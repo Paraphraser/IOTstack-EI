@@ -1,0 +1,19 @@
+edge-impulse:
+  container_name: edge-impulse
+  build:
+    context: ./.templates/edge-impulse/.
+    args:
+    - LINUX_DISTRO=debian
+    - DISTRO_VERSION=latest
+  restart: unless-stopped
+  environment:
+  - TZ=${TZ:-Etc/UTC}
+  - UDEV=1
+# - EI_HOST=
+  network_mode: host
+  volumes:
+  - /dev:/dev:ro
+  - ./volumes/edge-impulse:/home/edge-impulse
+  devices:
+  - /dev:/dev
+  privileged: true
